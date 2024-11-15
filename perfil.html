@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário - NuvemLens</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="perfil.css">
+    <style>
+    
+        .profile-container {
+            border: 2px solid #d0e7f9;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #f9fcff;
+        }
+
+        .profile-info, .photos-section {
+            border: 1px solid #d0e7f9;
+            border-radius: 8px;
+            padding: 15px;
+            background-color: #ffffff;
+            margin-top: 20px;
+        }
+
+        .profile-header {
+            padding: 20px;
+            border-bottom: 2px solid #d0e7f9;
+        }
+
+        .profile-actions .btn {
+            margin-top: 10px;
+            margin-right: 5px;
+        }
+
+        .photos-section h3 {
+            text-align: center;
+            color: #4A90E2;
+        }
+
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .photo-gallery img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .photo-gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <a class="navbar-brand" href="#">NuvemLens</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
+                <li class="nav-item"><a class="nav-link" href="#compras">Compras</a></li>
+                <li class="nav-item"><a class="nav-link" href="#configuracoes">Configurações</a></li>
+                <li class="nav-item"><button class="btn btn-light ms-2">Logout</button></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section id="perfil" class="container my-5 profile-container">
+    <div class="profile-header text-center">
+        <img src="nuvens/dani.jpg" alt="Foto do Usuário" class="profile-img rounded-circle" width="150" height="150">
+        <h2 class="username mt-3">Danietta Órion</h2>
+        <p class="user-bio">"Curiosa, apaixonada por meteorologia, amante da natureza e sempre com o olhar para o céu!"</p>
+        <button class="btn btn-info mt-2" data-bs-toggle="modal" data-bs-target="#editProfileModal">Editar Perfil</button>
+    </div>
+
+    <div class="profile-info mt-4">
+        <h3>Informações Pessoais</h3>
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Email:</strong> daniella.etaorionisn@gmail.com</li>
+            <li class="list-group-item"><strong>Interesses:</strong> Observação de nuvens, classificação de nuvens, fotografia da natureza, meteorologia</li>
+            <li class="list-group-item"><strong>Projetos:</strong> Plataforma NuvemLens, Análise de Padrões de Tempestades</li>
+            <li class="list-group-item"><strong>Localização:</strong> Baseada em observações no Monte Fuji</li>
+            <li class="list-group-item"><strong>Estilo de Perfil:</strong> Introvertida, prefere legendas nas músicas de abertura de animes em vez de traduções.</li>
+        </ul>
+    </div>
+
+    <div class="photos-section mt-4">
+        <h3>Fotos Enviadas</h3>
+        <div class="photo-gallery">
+            <img src="nuvens/nuvem4.jpg" alt="Foto enviada 1">
+        </div>
+    </div>
+
+    <div class="profile-actions mt-4 text-center">
+        <a href="pag.html" class="btn btn-primary">Ver Galeria</a>
+<a href="pag.html" class="btn btn-secondary">Fazer Upload</a>
+<a href="editar_perfil.html" class="btn btn-info">Editar Perfil</a>
+    </div>
+</section>
+
+<footer class="footer bg-primary text-white text-center py-3">
+    <p>&copy; 2024 NuvemLens. Todos os direitos reservados.</p>
+    <p>
+        Siga-nos nas redes sociais:
+        <a href="#" class="text-white">Facebook</a> |
+        <a href="#" class="text-white">Twitter</a> |
+        <a href="#" class="text-white">Instagram</a>
+    </p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
