@@ -1,0 +1,10 @@
+.cloud {
+    position: absolute;
+    background: url('nuvens/clou1.png') no-repeat;
+    background-size: cover;
+    width: 300px;
+    height: 150px;
+    opacity: 0.6;
+    animation: float 60s linear infinite;
+}
+

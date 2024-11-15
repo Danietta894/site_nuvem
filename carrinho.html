@@ -1,167 +1,138 @@
-<!DOCTYPE html> 
-<html lang="pt-br"> 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NuvemLens - Plataforma de Observação de Nuvens</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #d0e7f9, #f9fcff);
+            color: #333;
+        }
 
-  <head> 
-    <meta charset="utf-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+        .navbar {
+            background-color: #4A90E2;
+        }
 
-    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.css" > 
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
 
- 
+        .navbar-nav .nav-link:hover {
+            background-color: #007bff1a;
+            border-radius: 5px;
+        }
 
-    <title>Nuvem share</title> 
+        .navbar-nav .nav-link.active {
+            color: #FFD700 !important;
+            background-color: #333;
+            border-radius: 5px;
+        }
 
-    </head> 
+        .navbar-toggler {
+            background-color: #FFD700;
+            border: 1px solid #FFD700;
+        }
+        .navbar-toggler-icon {
+            background-color: #333;
+        }
 
-    <!DOCTYPE html>
-    <html lang="pt-br">
-    
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Logo no Canto</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-        <style>
-            /* Posicionando a logo no canto superior esquerdo */
-            .logo {
-                position: absolute;
-                top: 10px;   /* Distância do topo da página */
-                left: 10px;  /* Distância da borda esquerda */
-                max-width: 200px; /* Tamanho máximo da logo (ajustável) */
-            }
-        </style>
-    </head>
-    
-    <body>
-    
+        h1 {
+            color: #4A90E2;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
         
-        <img src="logotipo.png" alt="Logotipo" class="logo">
-    
-        <div class="container mt-4">
-            <h1>Nuvemlens</h1>
-            <p></p>
-        </div>
-    
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-   
-    
-    </html>
-    
-    <!DOCTYPE html>
-    <html lang="pt-br">
-    
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Nuvem Share</title>
-        <!-- Bootstrap 5 CSS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
-        <style>
-            .carousel-item img {
-                width: 100%; /* Preenche toda a largura do carrossel */
-                height: 400px; /* Altura fixa para padronização */
-                object-fit: cover; /* Mantém a proporção da imagem */
-            }
-            /* Estilo das imagens na galeria */
-            .img-fluid {
-                height: 300px;
-                object-fit: cover;
-            }
-            /* Estilo dos cards */
-            .card-img-top {
-                object-fit: cover;
-                height: 200px;
-            }
-            /* Estilo do rodapé */
-            .footer {
-                background-color: #38b6ff;
-                color: white;
-                padding: 20px;
-                text-align: center;
-            }
-        </style>
-    </head>
-    
-    <body>
-        <!-- Navbar com Botões no Topo -->
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
-                <!-- Logo -->
-                <a class="navbar-brand" href="#">
-                   
-                </a>
-    
+        h2 {
+            color: #0056b3;
+            font-style: oblique;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 2em;
+        }
 
-                <!-- Botões de Navegação -->
-                
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-    
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#home"onclick="window.location.href='pag.html'">Início</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#galeria">Galeria</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contato">Contato</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#sobre">Sobre</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#carrinho" onclick="window.location.href='Carrinho.html'">
-                                <i class="fas fa-shopping-cart"></i> Carrinho
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+            background-color: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .product-title {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+        .product-price {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #000;
+        }
+        .btn-add-cart {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn-add-cart:hover {
+            background-color: #0056b3;
+        }
+
+        .footer {
+            background-color: #4A90E2;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer a {
+            color: #d0e7f9;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">NuvemLens</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home" onclick="window.location.href='pag.html'">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#carrinho" onclick="window.location.href='Carrinho.html'">Carrinho</a></li>
+                </ul>
             </div>
-        </nav>
-<!-- Estilos Customizados -->
-<style>
-.navbar-nav .nav-link {
-        color: #070707 !important; /* Cor do texto dos links (branco) */
-        font-weight: 500; /* Peso da fonte */
-    }
-
-    /* Cor dos links quando o mouse passar por cima (hover) */
-    .navbar-nav .nav-link:hover {
-        color: hsl(216, 100%, 50%) !important; /* Cor amarela para hover */
-        background-color: #007bff1a; /* Fundo leve azul */
-        border-radius: 5px; /* Bordas arredondadas */
-    }
-
-    /* Cor do link ativo */
-    .navbar-nav .nav-link.active {
-        color: #FFD700 !important; /* Cor do texto ativo (amarelo) */
-        background-color: #333333; /* Cor de fundo escura para ativo */
-        border-radius: 5px; /* Bordas arredondadas */
-    }
-
-    /* Cor do botão hamburguer (toggler) */
-    .navbar-toggler {
-        background-color: #FFD700; /* Cor amarela para o botão de menu */
-        border: 1px solid #FFD700; /* Borda amarela */
-    }
-
-    /* Cor do ícone do botão hamburguer */
-    .navbar-toggler-icon {
-        background-color: #333333; /* Cor escura para os três risquinhos */
-    }
-
-    /* Estilo para o ícone do carrinho */
-    .navbar-nav .nav-link i {
-        margin-right: 5px; /* Espaço entre o ícone e o texto */
-    }
-</style>
-        
-    <!-- Seção de Produtos -->
+        </div>
+    </nav>
+    <div class="container mt-4">
+        <h1>NuvemLens</h1>
+    </div>
     <style>
         h2{
             color: #0056b3;
@@ -174,7 +145,6 @@
     <div class="container mt-4" id="produtos">
         <h2 class="text-center">Nossos Produtos</h2>
         <div class="row">
-            <!-- Produto 1 -->
             <div class="col-md-3 mb-4">
                 <div class="product-card">
                     <img src="carrinho/arte.jpg" class="product-image" alt="Produto 1">
@@ -183,8 +153,6 @@
                     <button class="btn-add-cart" onclick="addToCart('Produto 1', 99.90)">Adicionar ao Carrinho</button>
                 </div>
             </div>
-    
-            <!-- Produto 2 -->
             <div class="col-md-3 mb-4">
                 <div class="product-card">
                     <img src="carrinho/caderneta.jpg" class="product-image" alt="Produto 2">
@@ -193,8 +161,6 @@
                     <button class="btn-add-cart" onclick="addToCart('Produto 2', 149.90)">Adicionar ao Carrinho</button>
                 </div>
             </div>
-    
-            <!-- Produto 3 -->
             <div class="col-md-3 mb-4">
                 <div class="product-card">
                     <img src="carrinho/caneca.jpg" class="product-image" alt="Produto 3">
@@ -203,8 +169,6 @@
                     <button class="btn-add-cart" onclick="addToCart('Produto 3', 59.90)">Adicionar ao Carrinho</button>
                 </div>
             </div>
-    
-            <!-- Produto 4 -->
             <div class="col-md-3 mb-4">
                 <div class="product-card">
                     <img src="carrinho/travesseiro.jpg" class="product-image" alt="Produto 4">
@@ -213,8 +177,6 @@
                     <button class="btn-add-cart" onclick="addToCart('Produto 4', 199.90)">Adicionar ao Carrinho</button>
                 </div>
             </div>
-    
-            <!-- Produto 5 -->
             <div class="col-md-3 mb-4">
                 <div class="product-card">
                     <img src="carrinho/capinha.jpg" class="product-image" alt="Produto 5">
@@ -223,8 +185,6 @@
                     <button class="btn-add-cart" onclick="addToCart('Produto 5', 99.90)">Adicionar ao Carrinho</button>
                 </div>
             </div>
-    
-            <!-- Produto 6 -->
             <div class="col-md-3 mb-4">
                 <div class="product-card">
                     <img src="carrinho/chaveiro.jpg" class="product-image" alt="Produto 6">
@@ -233,8 +193,6 @@
                     <button class="btn-add-cart" onclick="addToCart('Produto 6', 149.90)">Adicionar ao Carrinho</button>
                 </div>
             </div>
-    
-            <!-- Produto 7 -->
             <div class="col-md-3 mb-4">
                 <div class="product-card">
                     <img src="carrinho/cortina.jpg" class="product-image" alt="Produto 7">
@@ -243,8 +201,6 @@
                     <button class="btn-add-cart" onclick="addToCart('Produto 7', 59.90)">Adicionar ao Carrinho</button>
                 </div>
             </div>
-    
-            <!-- Produto 8 -->
             <div class="col-md-3 mb-4">
                 <div class="product-card">
                     <img src="carrinho/espelho.jpg" class="product-image" alt="Produto 8">
@@ -253,8 +209,6 @@
                     <button class="btn-add-cart" onclick="addToCart('Produto 8', 199.90)">Adicionar ao Carrinho</button>
                 </div>
             </div>
-    
-            <!-- Produto 9 -->
             <div class="col-md-3 mb-4">
                 <div class="product-card">
                     <img src="carrinho/imageladeira.jpg" class="product-image" alt="Produto 9">
@@ -263,8 +217,6 @@
                     <button class="btn-add-cart" onclick="addToCart('Produto 9', 99.90)">Adicionar ao Carrinho</button>
                 </div>
             </div>
-    
-            <!-- Produto 10 -->
             <div class="col-md-3 mb-4">
                 <div class="product-card">
                     <img src="carrinho/livro.jpg" class="product-image" alt="Produto 10">
@@ -273,8 +225,6 @@
                     <button class="btn-add-cart" onclick="addToCart('Produto 10', 149.90)">Adicionar ao Carrinho</button>
                 </div>
             </div>
-    
-            <!-- Produto 11 -->
             <div class="col-md-3 mb-4">
                 <div class="product-card">
                     <img src="carrinho/luminaria.jpg" class="product-image" alt="Produto 11">
@@ -283,8 +233,6 @@
                     <button class="btn-add-cart" onclick="addToCart('Produto 11', 59.90)">Adicionar ao Carrinho</button>
                 </div>
             </div>
-    
-            <!-- Produto 12 -->
             <div class="col-md-3 mb-4">
                 <div class="product-card">
                     <img src="carrinho/pingente.jpg" class="product-image" alt="Produto 12">
@@ -297,7 +245,6 @@
     </div>
     
     <style>
-        /* Estilo para os cartões de produtos */
         .product-card {
             border: 1px solid #ddd;
             border-radius: 8px;
@@ -308,14 +255,14 @@
         }
     
         .product-card:hover {
-            transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+            transform: translateY(-5px);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
     
         .product-image {
             width: 100%;
-            height: 200px; /* Definindo uma altura fixa para todas as imagens */
-            object-fit: cover; /* Garante que as imagens ocupem toda a área sem distorcer */
+            height: 200px;
+            object-fit: cover; 
             border-radius: 8px;
         }
     
@@ -346,30 +293,74 @@
         }
     </style>
     
-
-        <!-- Seção Contato -->
-        <div class="container mt-4" id="contato">
-            <h2>Contato</h2>
-            <form>
-                <div class="mb-3">
-                    <label for="nome" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="nome" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="mensagem" class="form-label">Mensagem</label>
-                    <textarea class="form-control" id="mensagem" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
-            </form>
+<div class="container mt-4" id="contato">
+    <h2>Fale Conosco</h2>
+    <form class="form-container">
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nome" required>
         </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="mensagem" class="form-label">Mensagem</label>
+            <textarea class="form-control" id="mensagem" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Enviar</button>
+    </form>
+</div>
+
+<style>
+    .form-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e0e0e0;
+    }
     
-        <!-- Rodapé -->
+    h2 {
+        color: #4A90E2;
+        text-align: center;
+        font-size: 2em;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .form-label {
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 5px;
+    }
+    
+    .form-control {
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 1em;
+    }
+
+    .btn-primary {
+        background-color: #4A90E2;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        font-size: 1em;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background-color: #357ABD;
+    }
+</style>
         <footer class="footer">
-            <p>&copy; 2024 Nuvem Share. Todos os direitos reservados.</p>
+            <p>&copy; 2024 NuvemLens. Todos os direitos reservados.</p>
             <p>
                 Siga-nos nas redes sociais:
                 <a href="#" class="text-white">Facebook</a> |
@@ -377,8 +368,6 @@
                 <a href="#" class="text-white">Instagram</a>
             </p>
         </footer>
-    
-        <!-- Bootstrap 5 e FontAwesome JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     </body>
     

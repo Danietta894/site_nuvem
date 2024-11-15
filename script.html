@@ -1,0 +1,48 @@
+-- Criação do banco de dados
+CREATE DATABASE NuvemLens;
+USE NuvemLens;
+
+-- Tabela de Usuários
+CREATE TABLE Usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    biografia TEXT,
+    localizacao VARCHAR(100),
+    estilo_perfil VARCHAR(100),
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Tabela de Fotos Enviadas
+CREATE TABLE Fotos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT NOT NULL,
+    url VARCHAR(255) NOT NULL,
+    descricao TEXT,
+    data_envio TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (usuario_id) REFERENCES Usuarios(id) ON DELETE CASCADE
+);
+
+-- Tabela de Compras Realizadas
+CREATE TABLE Compras (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT NOT NULL,
+    produto_nome VARCHAR(100) NOT NULL,
+    quantidade INT NOT NULL,
+    preco DECIMAL(10, 2) NOT NULL,
+    data_compra TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (usuario_id) REFERENCES Usuarios(id) ON DELETE CASCADE
+);
+
+-- Inserção de dados de exemplo
+INSERT INTO Usuarios (nome, email, senha, biografia, localizacao, estilo_perfil) VALUES 
+('Danietta Órion', 'daniella.etaorionisn@gmail.com', 'senha123', 'Curiosa, apaixonada por meteorologia e amante da natureza.', 'Monte Fuji', 'Introvertida, prefere legendas nas músicas de abertura de animes em vez de traduções.');
+
+INSERT INTO Fotos (usuario_id, url, descricao) VALUES 
+(1, 'https://exemplo.com/foto1.jpg', 'Cumulonimbus com formação interessante.'),
+(1, 'https://exemplo.com/foto2.jpg', 'Pôr do sol com nuvens altostratus.');
+
+INSERT INTO Compras (usuario_id, produto_nome, quantidade, preco) VALUES 
+(1, 'Caneca NuvemLens', 2, 29.90),
+(1, 'Poster de Nuvens', 1, 49.90);
