@@ -68,7 +68,7 @@ body {
 
 .category-tags {
     color: #4A90E2;
-    font-weight: bold;
+    
     font-size: 0.85em;
     margin-top: 5px;
     display: inline-block;
@@ -81,7 +81,13 @@ body {
     display: inline-block;
 }
 
-/* Estilo dos Cards de Depoimentos */
+.category-tags a {
+    font-weight: bold;
+    }
+.category-tags p {
+    font-style: italic;
+    }
+    /* Estilo dos Cards de Depoimentos */
 .testimonial-card {
     background-color: #ffffff;
     border-radius: 10px;
