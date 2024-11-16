@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NuvemLens - Plataforma de Observação de Nuvens</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -34,8 +39,8 @@
         }
     </style>
 </head>
+
 <body>
-    <!-- Navbar com login e cadastro -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="#">NuvemLens</a>
@@ -44,68 +49,103 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#inicio"onclick="window.location.href='pag.html'">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#produtos"onclick="window.location.href='catalogo.html'">Catálogo</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#upload" onclick="window.location.href='upload.html'">Upload de Imagens</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pag.html">Galeria</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="upload.html">Upload de Imagens</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#Meu Perfil">Meu Perfil</a></li>
-                    <li class="nav-item"><button class="btn btn-light ms-2" onclick="window.location.href='login.html'">Login</button></li>
+                    <li class="nav-item"><a class="nav-link" href="perfil.html">Meu Perfil</a></li>
+                    <li class="nav-item"><button class="btn btn-light ms-2">Logout</button></li>
                 </ul>
             </div>
         </div>
     </nav>
-
-<!-- Seção de Upload de Imagens -->
-<section id="upload" class="container my-5">
-    <h2>Upload de Imagens</h2>
-    <p>Faça o upload de suas fotos de nuvens e compartilhe com a comunidade!</p>
-    <form id="uploadForm" enctype="multipart/form-data">
-        <div class="mb-3 col-md-4">
+   <section id="upload" class="container my-5">
+        <h2>Upload de Imagens</h2>
+        <p>Faça o upload de suas fotos de nuvens e compartilhe com a comunidade!</p>
+    <form id="uploadForm" class="form-container" enctype="multipart/form-data">
+        <div class="mb-3">
             <label for="imageFile" class="form-label">Selecione uma Imagem (JPEG, PNG)</label>
             <input type="file" class="form-control" id="imageFile" accept=".jpg, .jpeg, .png" required>
         </div>
-        <div class="mb-3 col-md-4">
+        <div class="mb-3">
             <label for="location" class="form-label">Local da Captura</label>
-            <input type="text" class="form-control" id="location" required>
+            <input type="text" class="form-control" id="location" placeholder="Digite o local ou clique no mapa" required>
         </div>
-        <div class="mb-3 col-md-4">
+        <input type="hidden" id="latitude" name="latitude">
+        <input type="hidden" id="longitude" name="longitude">
+
+        <div id="map" class="col-md-12 mb-3" style="height: 300px;"></div>
+        
+        <div class="mb-3">
             <label for="date" class="form-label">Data e Hora da Captura</label>
             <input type="datetime-local" class="form-control" id="date" required>
         </div>
-        <div class="mb-3 col-md-6">
+        <div class="mb-3">
             <label for="description" class="form-label">Descrição da Imagem</label>
-            <textarea class="form-control" id="description" rows="6" required></textarea>
+            <textarea class="form-control" id="description" rows="4" required></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Enviar Imagem</button>
     </form>
-</section><!-- Formulário de Contato -->
+</section>
 <section id="contato" class="container my-5">
     <h2>Fale Conosco</h2>
-    <form>
-        <div class="mb-3 col-md-4">
+    <form class="form-container">
+        <div class="mb-3">
             <label for="nome" class="form-label">Nome</label>
             <input type="text" class="form-control" id="nome" required>
         </div>
-        <div class="mb-3 col-md-4">
+        <div class="mb-3">
             <label for="email" class="form-label">Email</label>
             <input type="email" class="form-control" id="email" required>
         </div>
-        <div class="mb-3 col-md-6">
+        <div class="mb-3">
             <label for="mensagem" class="form-label">Mensagem</label>
             <textarea class="form-control" id="mensagem" rows="6" required></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
 </section>
-<!-- Rodapé -->
-<footer class="footer mt-5">
-    <p>&copy; 2024 NuvemLens. Todos os direitos reservados.</p>
-</footer>
-
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+     <footer class="footer">
+        <p>&copy; 2024 NuvemLens. Todos os direitos reservados.</p>
+        <p>
+            Siga-nos nas redes sociais:
+            <a href="#" class="text-white">Facebook</a> |
+            <a href="#" class="text-white">Twitter</a> |
+            <a href="#" class="text-white">Instagram</a>
+        </p>
+    </footer>
+    <div id="weather">Carregando previsão do tempo...</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        const apiKey = '4224acfbc8bb00585d642c6ff1a360d0';
+        var map = L.map('map').setView([0, 0], 2);
+    
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+           attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+        }).addTo(map);
+    
+        var marker;
+        map.on('click', function(e) {
+           if (marker) {
+              map.removeLayer(marker);
+           }
+           marker = L.marker(e.latlng).addTo(map);
+           document.getElementById('latitude').value = e.latlng.lat;
+           document.getElementById('longitude').value = e.latlng.lng;
+           document.getElementById('location').value = `Latitude: ${e.latlng.lat}, Longitude: ${e.latlng.lng}`;
+           fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${e.latlng.lat}&lon=${e.latlng.lng}&appid=${apiKey}&units=metric&lang=pt_br`)
+             .then(response => response.json())
+             .then(data => {
+               const weatherInfo = `Clima atual: ${data.weather[0].description}, Temperatura: ${data.main.temp}°C`;
+               document.getElementById('weather').innerText = weatherInfo;
+             })
+             .catch(error => console.error('Erro ao obter a previsão do tempo:', error));
+        });
+    </script>
+    
 </body>
 </html>
 
+    

@@ -3,204 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NuvemLens - Plataforma de Observação de Nuvens</title>
+    <title>NuvemLens - Catálogo</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="catalogo.css">
     <style>
         body {
-    font-family: Arial, sans-serif;
-    background-color: #f9fcff;
-    color: #333;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-}
-
-/* Navbar */
-.navbar {
-    background-color: #4A90E2;
-}
-
-.navbar-brand, .nav-link {
-    color: #fff !important;
-    font-weight: bold;
-}
-
-.navbar .nav-link:hover {
-    color: #d0e7f9 !important;
-}
-
-        .gallery img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            transition: transform 0.3s;
+            font-family: Arial, sans-serif;
+            background-color: #f9fcff;
+            color: #333;
         }
-        .gallery img:hover {
-            transform: scale(1.05);
-        }
-    </style>
-</head>
-<body>
-    <!-- Navbar com login e cadastro -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">NuvemLens</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#inicio"onclick="window.location.href='pag.html'">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#sobre"onclick="window.location.href='inicial.html'">Sobre</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#galeria"onclick="window.location.href='inicial.html'">Galeria</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#produtos"onclick="window.location.href='catalogo.html'">Catálogo</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#upload" onclick="window.location.href='inicial.html'">Upload de Imagens</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#Meu Perfil"onclick="window.location.href='perfil.html'">Meu Perfil</a></li>
-                    <li class="nav-item"><button class="btn btn-light ms-2" onclick="window.location.href='login.html'">Login</button></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-        
-    <!-- Seção de Produtos -->
-    <style>
-        h2{
-            color: #0056b3;
-            font-style: oblique;
+        .navbar {
+            background-color: #4A90E2;
         }
-        h5{
-            color: rgb(107, 107, 107);
+
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+            font-weight: bold;
         }
-    </style> 
-    <div class="container mt-4" id="produtos">
-        <h2 class="text-center">Nossos Produtos</h2>
-        <div class="row">
-            <!-- Produto 1 -->
-            <div class="col-md-3 mb-4">
-                <div class="product-card">
-                    <img src="arte.jpg" class="product-image" alt="Produto 1">
-                    <h5 class="product-title">Arte </h5>
-                    <p class="product-price">R$ 99,90</p>
-                    <button class="btn-add-cart" onclick="addToCart('Produto 1', 99.90)">Adicionar ao Carrinho</button>
-                </div>
-            </div>
-    
-            <!-- Produto 2 -->
-            <div class="col-md-3 mb-4">
-                <div class="product-card">
-                    <img src="caderno.jpg" class="product-image" alt="Produto 2">
-                    <h5 class="product-title">Caderno</h5>
-                    <p class="product-price">R$ 149,90</p>
-                    <button class="btn-add-cart" onclick="addToCart('Produto 2', 149.90)">Adicionar ao Carrinho</button>
-                </div>
-            </div>
-    
-            <!-- Produto 3 -->
-            <div class="col-md-3 mb-4">
-                <div class="product-card">
-                    <img src="caneca.jpg" class="product-image" alt="Produto 3">
-                    <h5 class="product-title">Caneca</h5>
-                    <p class="product-price">R$ 59,90</p>
-                    <button class="btn-add-cart" onclick="addToCart('Produto 3', 59.90)">Adicionar ao Carrinho</button>
-                </div>
-            </div>
-    
-            <!-- Produto 4 -->
-            <div class="col-md-3 mb-4">
-                <div class="product-card">
-                    <img src="travesseiro.jpg" class="product-image" alt="Produto 4">
-                    <h5 class="product-title">Travesseiro</h5>
-                    <p class="product-price">R$ 199,90</p>
-                    <button class="btn-add-cart" onclick="addToCart('Produto 4', 199.90)">Adicionar ao Carrinho</button>
-                </div>
-            </div>
-    
-            <!-- Produto 5 -->
-            <div class="col-md-3 mb-4">
-                <div class="product-card">
-                    <img src="capinha.jpg" class="product-image" alt="Produto 5">
-                    <h5 class="product-title">Capinha</h5>
-                    <p class="product-price">R$ 99,90</p>
-                    <button class="btn-add-cart" onclick="addToCart('Produto 5', 99.90)">Adicionar ao Carrinho</button>
-                </div>
-            </div>
-    
-            <!-- Produto 6 -->
-            <div class="col-md-3 mb-4">
-                <div class="product-card">
-                    <img src="chaveiro.jpg" class="product-image" alt="Produto 6">
-                    <h5 class="product-title">Chaveiro</h5>
-                    <p class="product-price">R$ 149,90</p>
-                    <button class="btn-add-cart" onclick="addToCart('Produto 6', 149.90)">Adicionar ao Carrinho</button>
-                </div>
-            </div>
-    
-            <!-- Produto 7 -->
-            <div class="col-md-3 mb-4">
-                <div class="product-card">
-                    <img src="cortina.jpg" class="product-image" alt="Produto 7">
-                    <h5 class="product-title">Cortina</h5>
-                    <p class="product-price">R$ 59,90</p>
-                    <button class="btn-add-cart" onclick="addToCart('Produto 7', 59.90)">Adicionar ao Carrinho</button>
-                </div>
-            </div>
-    
-            <!-- Produto 8 -->
-            <div class="col-md-3 mb-4">
-                <div class="product-card">
-                    <img src="espelho.jpg" class="product-image" alt="Produto 8">
-                    <h5 class="product-title">Espelho</h5>
-                    <p class="product-price">R$ 199,90</p>
-                    <button class="btn-add-cart" onclick="addToCart('Produto 8', 199.90)">Adicionar ao Carrinho</button>
-                </div>
-            </div>
-    
-            <!-- Produto 9 -->
-            <div class="col-md-3 mb-4">
-                <div class="product-card">
-                    <img src="imageladeira.jpg" class="product-image" alt="Produto 9">
-                    <h5 class="product-title">Imã de geladeira</h5>
-                    <p class="product-price">R$ 99,90</p>
-                    <button class="btn-add-cart" onclick="addToCart('Produto 9', 99.90)">Adicionar ao Carrinho</button>
-                </div>
-            </div>
-    
-            <!-- Produto 10 -->
-            <div class="col-md-3 mb-4">
-                <div class="product-card">
-                    <img src="livro.jpg" class="product-image" alt="Produto 10">
-                    <h5 class="product-title">Livro</h5>
-                    <p class="product-price">R$ 149,90</p>
-                    <button class="btn-add-cart" onclick="addToCart('Produto 10', 149.90)">Adicionar ao Carrinho</button>
-                </div>
-            </div>
-    
-            <!-- Produto 11 -->
-            <div class="col-md-3 mb-4">
-                <div class="product-card">
-                    <img src="luminaria.jpg" class="product-image" alt="Produto 11">
-                    <h5 class="product-title">Lumiária</h5>
-                    <p class="product-price">R$ 59,90</p>
-                    <button class="btn-add-cart" onclick="addToCart('Produto 11', 59.90)">Adicionar ao Carrinho</button>
-                </div>
-            </div>
-    
-            <!-- Produto 12 -->
-            <div class="col-md-3 mb-4">
-                <div class="product-card">
-                    <img src="pingente.jpg" class="product-image" alt="Produto 12">
-                    <h5 class="product-title">Pingente</h5>
-                    <p class="product-price">R$ 199,90</p>
-                    <button class="btn-add-cart" onclick="addToCart('Produto 12', 199.90)">Adicionar ao Carrinho</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <style>
-        /* Estilo para os cartões de produtos */
+
+        .navbar .nav-link:hover {
+            color: #d0e7f9 !important;
+        }
+
         .product-card {
             border: 1px solid #ddd;
             border-radius: 8px;
@@ -209,30 +34,30 @@
             background-color: #fff;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-    
+
         .product-card:hover {
-            transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+            transform: translateY(-5px);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-    
+
         .product-image {
             width: 100%;
-            height: 200px; /* Definindo uma altura fixa para todas as imagens */
-            object-fit: cover; /* Garante que as imagens ocupem toda a área sem distorcer */
+            height: 200px;
+            object-fit: cover;
             border-radius: 8px;
         }
-    
+
         .product-title {
             font-size: 1.2rem;
             margin: 10px 0;
         }
-    
+
         .product-price {
             font-size: 1rem;
             color: #000000;
             font-weight: bold;
         }
-    
+
         .btn-add-cart {
             background-color: #007bff;
             color: white;
@@ -243,47 +68,220 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
-    
+
         .btn-add-cart:hover {
             background-color: #0056b3;
         }
-    </style>
-    
 
-        <!-- Seção Contato -->
-        <div class="container mt-4" id="contato">
-            <h2>Contato</h2>
-            <form>
-                <div class="mb-3">
-                    <label for="nome" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="nome" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="mensagem" class="form-label">Mensagem</label>
-                    <textarea class="form-control" id="mensagem" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
-            </form>
+        .modal-header, .modal-footer {
+            background-color: #4A90E2;
+            color: white;
+        }
+
+        .list-group-item {
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">NuvemLens</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="pag.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="inicial.html">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="inicial.html">Galeria</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="perfil.html">Meu Perfil</a></li>
+                </ul>
+            </div>
         </div>
-    
-        <!-- Rodapé -->
-        <footer class="footer">
-            <p>&copy; 2024 Nuvem Share. Todos os direitos reservados.</p>
-            <p>
-                Siga-nos nas redes sociais:
-                <a href="#" class="text-white">Facebook</a> |
-                <a href="#" class="text-white">Twitter</a> |
-                <a href="#" class="text-white">Instagram</a>
-            </p>
-        </footer>
-    
-        <!-- Bootstrap 5 e FontAwesome JS -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
-    
-    </html>
-    
+    </nav>
+
+    <!-- Seção de Produtos -->
+    <div class="container mt-4" id="produtos">
+        <h2 class="text-center text-primary">Nossos Produtos</h2>
+        <div class="row" id="product-list"></div>
+    </div>
+
+    <!-- Carrinho -->
+    <div class="text-center mt-4">
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cartModal">
+            Abrir Carrinho (<span id="cart-count">0</span>)
+        </button>
+    </div>
+
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Carrinho de Compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul id="cart-items" class="list-group mb-3"></ul>
+                    <div class="mb-3">
+                        <label for="discount-code" class="form-label">Cupom de Desconto</label>
+                        <input type="text" id="discount-code" class="form-control" placeholder="Digite seu cupom">
+                        <button class="btn btn-secondary mt-2" onclick="applyDiscount()">Aplicar Cupom</button>
+                    </div>
+                    <p class="text-end"><strong>Total: R$ <span id="cart-total">0.00</span></strong></p>
+                    <p class="text-end text-success" id="discount-message" style="display: none;">Cupom aplicado com sucesso!</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" onclick="clearCart()">Limpar Carrinho</button>
+                    <button class="btn btn-success">Finalizar Compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Notificação -->
+    <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="notificationModalLabel">Produto Adicionado</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    O produto foi adicionado ao carrinho com sucesso!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <!-- Rodapé -->
+<footer class="text-center mt-4 bg-primary text-white py-3">
+    <p>&copy; 2024 NuvemLens. Todos os direitos reservados.</p>
+    <p>
+        Siga-nos nas redes sociais:
+        <a href="#" class="text-white text-decoration-underline">Facebook</a> |
+        <a href="#" class="text-white text-decoration-underline">Twitter</a> |
+        <a href="#" class="text-white text-decoration-underline">Instagram</a>
+    </p>
+</footer>
+
+
+    <!-- Scripts -->
+    <script>
+        const products = [
+            { name: 'Arte', price: 99.90, image: 'arte.jpg' },
+            { name: 'Caderno', price: 149.90, image: 'caderno.jpg' },
+            { name: 'Caneca', price: 59.90, image: 'caneca.jpg' },
+            { name: 'Travesseiro', price: 199.90, image: 'travesseiro.jpg' },
+            { name: 'Capinha', price: 99.90, image: 'capinha.jpg' },
+            { name: 'Chaveiro', price: 149.90, image: 'chaveiro.jpg' },
+            { name: 'Cortina', price: 59.90, image: 'cortina.jpg' },
+            { name: 'Espelho', price: 199.90, image: 'espelho.jpg' },
+            { name: 'Imã de Geladeira', price: 99.90, image: 'imageladeira.jpg' },
+            { name: 'Livro', price: 149.90, image: 'livro.jpg' },
+            { name: 'Luminária', price: 59.90, image: 'luminaria.jpg' },
+            { name: 'Pingente', price: 199.90, image: 'pingente.jpg' }
+        ];
+
+        let cart = [];
+        let discountApplied = 0;
+
+        const discountCoupons = {
+            "CUPOM10": 0.10, // 10% desconto
+            "CUPOM20": 0.20  // 20% desconto
+        };
+
+        function renderProducts() {
+            const productList = document.getElementById('product-list');
+            products.forEach(product => {
+                const productHTML = `
+                    <div class="col-md-3 mb-4">
+                        <div class="product-card">
+                            <img src="${product.image}" class="product-image" alt="${product.name}">
+                            <h5 class="product-title">${product.name}</h5>
+                            <p class="product-price">R$ ${product.price.toFixed(2)}</p>
+                            <button class="btn-add-cart" onclick="addToCart('${product.name}', ${product.price})">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                `;
+                productList.innerHTML += productHTML;
+            });
+        }
+
+        function addToCart(name, price) {
+            const existingProduct = cart.find(item => item.name === name);
+            if (existingProduct) {
+                existingProduct.quantity += 1;
+            } else {
+                cart.push({ name, price, quantity: 1 });
+            }
+            updateCart();
+            showNotification();
+        }
+
+        function updateCart() {
+            const cartCount = document.getElementById('cart-count');
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            const discountMessage = document.getElementById('discount-message');
+
+            cartItems.innerHTML = '';
+            let total = 0;
+            cart.forEach((item, index) => {
+                total += item.price * item.quantity;
+                const itemHTML = `
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        ${item.name} (x${item.quantity}) - R$ ${(item.price * item.quantity).toFixed(2)}
+                        <button class="btn btn-sm btn-danger" onclick="removeFromCart(${index})">Remover</button>
+                    </li>
+                `;
+                cartItems.innerHTML += itemHTML;
+            });
+
+            if (discountApplied > 0) {
+                total -= total * discountApplied;
+            }
+
+            cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartTotal.textContent = total.toFixed(2);
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function clearCart() {
+            cart = [];
+            discountApplied = 0;
+            document.getElementById("discount-message").style.display = "none";
+            updateCart();
+        }
+
+        function showNotification() {
+            const notificationModal = new bootstrap.Modal(document.getElementById('notificationModal'));
+            notificationModal.show();
+        }
+
+        function applyDiscount() {
+            const discountCode = document.getElementById('discount-code').value.trim().toUpperCase();
+            if (discountCoupons[discountCode]) {
+                discountApplied = discountCoupons[discountCode];
+                document.getElementById("discount-message").style.display = "block";
+                updateCart();
+            } else {
+                alert("Cupom inválido.");
+            }
+        }
+
+        renderProducts();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

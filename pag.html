@@ -1,48 +1,14 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
+<html lang="pt-BR"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NuvemLens - Plataforma de Observação de Nuvens</title>
+    <title>Galeria de Fotos - NuvemLens</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
-    
+    <link rel="stylesheet" href="pag.css">
 </head>
-<style>
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f9fcff;
-    color: #333;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-}
-
-/* Navbar */
-.navbar {
-    background-color: #4A90E2;
-}
-
-.navbar-brand, .nav-link {
-    color: #fff !important;
-    font-weight: bold;
-}
-
-.navbar .nav-link:hover {
-    color: #d0e7f9 !important;
-}
-
-.gallery img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    transition: transform 0.3s;
-}
-.gallery img:hover {
-    transform: scale(1.05);
-}
-</style>
 <body>
-    <!-- Navbar com login e cadastro -->
+
+<!-- Navbar -->
+<header>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="#">NuvemLens</a>
@@ -51,154 +17,139 @@ body {
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#sobre"onclick="window.location.href='inicial.html'">Sobre</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#produtos"onclick="window.location.href='catalogo.html'">Catálogo</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#upload" onclick="window.location.href='inicial.html'">Upload de Imagens</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#Meu Perfil"onclick="window.location.href='perfil.html'">Meu Perfil</a></li>
-                    <li class="nav-item"><button class="btn btn-light ms-2" onclick="window.location.href='login.html'">Login</button></li>
+                    <li class="nav-item"><a class="nav-link" href="inicial.html">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pag.html">Galeria</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="upload.html">Upload de Imagens</a></li>
+                    <li class="nav-item"><a class="nav-link" href="perfil.html">Perfil de Usuário</a></li>
+                    <li class="nav-item"><button class="btn btn-light ms-2" onclick="window.location.href='login.html'" aria-label="Login">Login</button></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- Estilos Customizados -->
-
-     <div id="carrosselImagens" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="foto1.jpg" class="d-block w-100" alt="Imagem 1" style="height: 400px; object-fit: cover;">
-            </div>
-            <div class="carousel-item">
-                <img src="foto2.jpg" class="d-block w-100" alt="Imagem 2" style="height: 400px; object-fit: cover;">
-            </div>
-            <div class="carousel-item">
-                <img src="foto4.jpg" class="d-block w-100" alt="Imagem 3" style="height: 400px; object-fit: cover;">
+</header>
+<div id="carrosselImagens" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="foto1.jpg" class="d-block w-100" alt="Imagem 1">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Cumulonimbus</h5>
+                <p>Foto tirada no Brasil.</p>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#carrosselImagens" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Anterior</span>
-        </a>
-        <a class="carousel-control-next" href="#carrosselImagens" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Próximo</span>
-        </a>
+        <div class="carousel-item">
+            <img src="foto2.jpg" class="d-block w-100" alt="Imagem 2">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Altocumulus</h5>
+                <p>Formação observada no Japão.</p>
+            </div>
+        </div>
     </div>
-    
-        <!-- Seção Galeria -->
-        <div class="container mt-4" id="galeria">
-            <h2>Nossa Galeria</h2>
-            <div class="row">
-                <!-- Primeira linha com 3 imagens -->
-                <div class="col-4 mb-3">
-                    <img src="nuvem2.jpeg" class="img-fluid rounded igual-tamanho" alt="Imagem 1">
-                    <figcaption>Cumulonimbus, Pannus, Pileus e Velum. </figcaption>
-                </figure>
-                </div>
-                
-                <div class="col-4 mb-3">
-                    <img src="nuvem3.jpeg" class="img-fluid rounded igual-tamanho" alt="Imagem 2">
-                    <figcaption>Cumulus Congestus e Pileus iridescentes </figcaption>
-            </figure>
-                </div>
-                <div class="col-4 mb-3">
-                    <img src="nuvem4.jpeg" class="img-fluid rounded igual-tamanho" alt="Imagem 3">
-                    <figcaption> 
-                        
-                        Altocumulus, Cirrus e Cavum (Fallstreak hole) </figcaption>
-            </figure>
-                </div>
-            </div>
-            <div class="row">
-                <!-- Segunda linha com 2 imagens -->
-                <div class="col-6 mb-3">
-                    <img src="nuvem6.jpeg" class="img-fluid rounded igual-tamanho" alt="Imagem 4">
-                    <figcaption>Stratocumulus e Mammatus. </figcaption>
-            </figure>
-                </div>
-                <div class="col-6 mb-3">
-                    <img src="nuvem1.jpeg" class="img-fluid rounded igual-tamanho" alt="Imagem 5">
-                    <figcaption>Stratocumulus e Lucunosas.</figcaption>
-            </figure>
-                </div>
-            </div>
-        </div>
-        
-        <style>
-            /* Garantir que todas as imagens tenham o mesmo tamanho */
-            .igual-tamanho {
-                object-fit: cover;  /* Garante que as imagens ocupem toda a área do container sem distorção */
-                height: 450px;       /* Defina uma altura fixa para todas as imagens */
-                width: 100%;         /* As imagens vão ocupar toda a largura da coluna */
-            }
-        </style>
-        
-        <!-- Seção Depoimentos -->
-        <div class="container mt-4" id="depoimentos">
-            <h2>O que dizem nossos usuários</h2>
-            <div class="row">
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">João Silva</h5>
-                            <p class="card-text">"Adorei a facilidade de uso do Nuvem Share. Transfiro meus arquivos de forma rápida e sem complicação. Super recomendo!"</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Maria Oliveira</h5>
-                            <p class="card-text">"A melhor plataforma para compartilhar arquivos grandes. A velocidade de upload é excelente!"</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Carlos Souza</h5>
-                            <p class="card-text">"Eu utilizo o Nuvem Share para armazenar fotos e documentos importantes. A segurança é um diferencial!"</p>
-                        </div>
-                    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carrosselImagens" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carrosselImagens" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Próximo</span>
+    </button>
+</div>
+
+
+<!-- Filtro e Botão de Enviar Imagem -->
+<div class="container">
+    <div class="filter-section">
+        <label for="filter" style="font-weight: bold; color: #4A90E2;">Filtrar por tipo de nuvem:</label>
+        <select id="filter" class="form-select w-auto d-inline-block" aria-label="Filtro de tipo de nuvem">
+            <option value="all">Todos</option>
+            <option value="Cumulonimbus">Cumulonimbus</option>
+            <option value="Cumulus Congestus">Cumulus Congestus</option>
+            <option value="Altocumulus">Altocumulus</option>
+            <option value="Stratocumulus">Stratocumulus</option>
+        </select>
+    </div>
+    <div class="upload-button">
+        <a href="upload.html">Enviar Imagem</a>
+    </div>
+</div>
+
+<!-- Galeria de Fotos -->
+<section class="container bg-light mt-4 pt-5 rounded-5" id="galeria">
+    <h2 class="text-center" style="color: #4A90E2;">Nossa Galeria</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="gallery-card">
+                <img src="nuvem2.jpeg" alt="Cumulonimbus, Pannus, Pileus e Velum">
+                <div class="category-description">Esta imagem mostra um exemplo de:</div>
+                <div class="category-tags">
+                    <a href="#">Cumulonimbus</a> | <a href="#">Pannus</a> | <a href="#">Pileus</a> | <a href="#">Velum</a>
                 </div>
             </div>
         </div>
-    
-        <!-- Seção Contato -->
-        <div class="container mt-4" id="contato">
-            <h2>Contato</h2>
-            <form>
-                <div class="mb-3">
-                    <label for="nome" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="nome" required>
+        <div class="col-md-4">
+            <div class="gallery-card">
+                <img src="nuvem3.jpeg" alt="Cumulus Congestus e Pileus iridescentes">
+                <div class="category-description">Esta imagem mostra um exemplo de:</div>
+                <div class="category-tags">
+                    <a href="#">Cumulus Congestus</a> | <a href="#">Pileus iridescentes</a>
                 </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="mensagem" class="form-label">Mensagem</label>
-                    <textarea class="form-control" id="mensagem" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
-            </form>
+            </div>
         </div>
-    
-        <!-- Rodapé -->
-        <footer class="footer">
-            <p>&copy; 2024 Nuvem Share. Todos os direitos reservados.</p>
-            <p>
-                Siga-nos nas redes sociais:
-                <a href="#" class="text-white">Facebook</a> |
-                <a href="#" class="text-white">Twitter</a> |
-                <a href="#" class="text-white">Instagram</a>
-            </p>
-        </footer>
-    
-        <!-- Bootstrap 5 e FontAwesome JS -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
-    
-    </html>
-    
+        <div class="col-md-4">
+            <div class="gallery-card">
+                <img src="nuvem4.jpeg" alt="Altocumulus, Cirrus e Cavum">
+                <div class="category-description">Esta imagem mostra um exemplo de:</div>
+                <div class="category-tags">
+                    <a href="#">Altocumulus</a><a> | </a><a href="#">Cirrus</a> | <a href="#">Cavum (Fallstreak hole)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Seção Depoimentos -->
+<section class="container bg-light mt-4 pt-5 rounded-5" id="depoimentos">
+    <h2 class="text-center" style="color: #4A90E2;">O que dizem nossos usuários</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="testimonial-card">
+                <h5>João Silva</h5>
+                <p>"Encontrei na NuvemLens uma comunidade incrível! É inspirador ver as nuvens de tantos lugares diferentes e aprender sobre cada tipo com outros entusiastas."</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="testimonial-card">
+                <h5>Maria Oliveira</h5>
+                <p>"A NuvemLens me inspirou a prestar mais atenção no céu. Antes eu passava despercebida, agora fico encantada com cada nuvem que vejo!"</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="testimonial-card">
+                <h5>Carlos Souza</h5>
+                <p>"Sou apaixonado pela natureza e encontrar um espaço como a NuvemLens é um sonho! Me sinto parte de uma comunidade de verdade."</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="text-center mt-4 py-3" style="background-color: #4A90E2; color: #fff;">
+    <p>© 2024 NuvemLens. Todos os direitos reservados.</p>
+    <div>
+        <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+    </div>
+             Siga-nos nas redes sociais:
+        <a href="#" class="footer-link text-white">Facebook</a> |
+        <a href="#" class="footer-link text-white">Twitter</a> |
+        <a href="#" class="footer-link text-white">Instagram</a>
+    <p></p>
+</footer>
+
+
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+    </body></html>
