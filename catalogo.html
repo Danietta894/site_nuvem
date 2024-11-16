@@ -193,7 +193,8 @@
 
         const discountCoupons = {
             "CUPOM10": 0.10, // 10% desconto
-            "CUPOM20": 0.20  // 20% desconto
+            "CUPOM20": 0.20,  // 20% desconto
+            "CUPOM90": 0.90 // 90% desconto 
         };
 
         function renderProducts() {
@@ -238,6 +239,8 @@
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         ${item.name} (x${item.quantity}) - R$ ${(item.price * item.quantity).toFixed(2)}
                         <button class="btn btn-sm btn-danger" onclick="removeFromCart(${index})">Remover</button>
+                        <button class="bnt btn-sm" onclick="addOne(${index})">+</button>
+                        <button class="bnt btn-sm" onclick="subOne(${index})">-</button>
                     </li>
                 `;
                 cartItems.innerHTML += itemHTML;
@@ -252,8 +255,20 @@
         }
 
         function removeFromCart(index) {
+        
             cart.splice(index, 1);
             updateCart();
+        }
+        function addOne(index) {
+            cart[index].quantity+=1;
+            updateCart();
+        }
+        function subOne(index) {
+            cart[index].quantity-=1;
+            updateCart(); 
+            if (cart[index].quantity<1) {
+              removeFromCart(index);
+            }
         }
 
         function clearCart() {
